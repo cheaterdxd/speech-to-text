@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text - Audio Transcription</title>
+    <meta name="description" content="Convert your audio files to text using advanced AI-powered speech recognition">
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2" />
+                    <path d="M20 10 L20 30 M15 15 L15 25 M25 15 L25 25 M12 18 L12 22 M28 18 L28 22"
+                        stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" />
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#667eea" />
+                            <stop offset="100%" stop-color="#764ba2" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>Speech to Text</h1>
+            </div>
+            <p class="subtitle">Transform audio into accurate text transcriptions</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 16V40M32 16L24 24M32 16L40 24" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M48 40V48H16V40" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h2>Drop your audio file here</h2>
+                    <p>or click to browse</p>
+                    <p class="file-types">Supports MP3, WAV, M4A, OGG, FLAC, AAC (max 300MB)</p>
+                    <input type="file" id="fileInput" accept=".mp3,.wav,.m4a,.ogg,.flac,.aac" hidden>
+                </div>
+
+                <div class="file-preview" id="filePreview" style="display: none;">
+                    <div class="file-info">
+                        <div class="file-icon">🎵</div>
+                        <div class="file-details">
+                            <h3 id="fileName"></h3>
+                            <p id="fileSize"></p>
+                        </div>
+                        <button class="remove-btn" id="removeBtn">✕</button>
+                    </div>
+                    <audio id="audioPlayer" controls></audio>
+                    <button class="upload-btn" id="uploadBtn">
+                        <span>Transcribe Audio</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 10L8 13L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing your audio...</p>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2>Transcription Results</h2>
+                    <div class="results-meta">
+                        <span class="badge" id="languageBadge"></span>
+                        <span class="time-badge" id="timeBadge"></span>
+                    </div>
+                </div>
+
+                <div class="full-text-section">
+                    <h3>Full Text</h3>
+                    <div class="full-text" id="fullText"></div>
+                    <button class="copy-btn" id="copyBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="5" width="9" height="9" stroke="currentColor" stroke-width="1.5" rx="1" />
+                            <path d="M3 11V3C3 2.44772 3.44772 2 4 2H10" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                        Copy Text
+                    </button>
+                </div>
+
+                <div class="segments-section">
+                    <h3>Timestamped Segments</h3>
+                    <div class="segments" id="segments"></div>
+                </div>
+
+                <button class="new-upload-btn" id="newUploadBtn">
+                    Upload Another File
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Faster Whisper AI</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

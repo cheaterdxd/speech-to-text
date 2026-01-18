@@ -30,7 +30,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
     background-attachment: fixed;
@@ -211,7 +211,8 @@ audio {
     border-radius: 0.5rem;
 }
 
-.upload-btn, .new-upload-btn {
+.upload-btn,
+.new-upload-btn {
     width: 100%;
     padding: 1rem 2rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -229,12 +230,14 @@ audio {
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.upload-btn:hover, .new-upload-btn:hover {
+.upload-btn:hover,
+.new-upload-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
 }
 
-.upload-btn:active, .new-upload-btn:active {
+.upload-btn:active,
+.new-upload-btn:active {
     transform: translateY(0);
 }
 
@@ -285,7 +288,8 @@ audio {
     flex-wrap: wrap;
 }
 
-.badge, .time-badge {
+.badge,
+.time-badge {
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     font-size: 0.875rem;
@@ -323,6 +327,28 @@ audio {
     margin-bottom: 1rem;
     color: var(--text-primary);
     font-size: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar cho full-text */
+.full-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.full-text::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.full-text::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.full-text::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
 }
 
 .copy-btn {
@@ -365,6 +391,29 @@ audio {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0.5rem;
+}
+
+/* Custom scrollbar cho segments */
+.segments::-webkit-scrollbar {
+    width: 8px;
+}
+
+.segments::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.segments::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.segments::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
 }
 
 .segment {
@@ -409,6 +458,7 @@ footer {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -419,6 +469,7 @@ footer {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -430,6 +481,7 @@ footer {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -441,6 +493,7 @@ footer {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -454,18 +507,24 @@ footer {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }

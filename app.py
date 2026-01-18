@@ -93,14 +93,10 @@ def upload_file():
         return jsonify({'error': f'Processing failed: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('DEBUG', 'True') == 'True'
-    
     print("\n" + "="*50)
     print("🎙️  Speech-to-Text Web Server")
     print("="*50)
-    print(f"Server running at: http://localhost:{port}")
+    print("Server running at: http://localhost:5000")
     print("Press Ctrl+C to stop")
     print("="*50 + "\n")
-    app.run(debug=debug, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=5000)

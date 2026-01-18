@@ -11,7 +11,7 @@
 - 🎨 Giao diện hiện đại, dark mode
 - 📋 Copy kết quả dễ dàng
 
-## 🚀 Cài đặt Local
+## 🚀 Cài đặt
 
 ### Yêu cầu
 - Python 3.8+
@@ -45,10 +45,6 @@ python app.py
 
 5. Mở trình duyệt tại: `http://localhost:5000`
 
-## 🌐 Deploy lên Render.com
-
-Xem hướng dẫn chi tiết trong file [DEPLOY.md](DEPLOY.md)
-
 ## 📝 Sử dụng
 
 1. Truy cập web app
@@ -61,7 +57,6 @@ Xem hướng dẫn chi tiết trong file [DEPLOY.md](DEPLOY.md)
 - **Backend**: Flask
 - **AI Model**: Faster Whisper (turbo)
 - **Frontend**: HTML, CSS, JavaScript
-- **Deployment**: Render.com
 
 ## 📄 License
 
